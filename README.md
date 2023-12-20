@@ -5,14 +5,14 @@ HTML에 대해 학습 및 실습한 내용을 적습니다. MDN 사이트의 HTM
 - https://developer.mozilla.org/ko/
 
 ## HTML ?
-HTML(Hypertext Markup Language)은 웹 페이지와 그 내용을 구조화하기 위해 사용하는 마크업 언어입니다. 특정 컨텐츠를 생성 또는 수정하거나 또다른 페이지를 하이퍼링크로 연결하여 이동할 수 있습니다.
+HTML(Hypertext Markup Language)은 웹 페이지가 어떻게 구조화되어 있는지 브라우저에게 알려주기 위해 사용하는 마크업 언어입니다. 특정 컨텐츠를 생성 또는 수정하거나 또다른 페이지를 하이퍼링크로 연결하여 이동할 수 있습니다.
 
 ### 요소(Element)
-웹 페이지 구조는 일련의 요소로 이루어져 있으며 태그(Tag)로 감싸 나타냅니다. 
+웹 페이지 구조는 일련의 요소로 이루어져 있으며 태그(tag)로 감싸 나타냅니다. 
 
 ![element](https://developer.mozilla.org/ko/docs/Learn/Getting_started_with_the_web/HTML_basics/grumpy-cat-small.png)
 
-어떤 요소는 속성(Attribute)을 가질 수 있습니다.
+어떤 요소는 속성(attribute)을 가질 수 있습니다.
 
 ![attr](https://developer.mozilla.org/ko/docs/Learn/Getting_started_with_the_web/HTML_basics/grumpy-cat-attribute-small.png)
 
@@ -33,6 +33,13 @@ HTML(Hypertext Markup Language)은 웹 페이지와 그 내용을 구조화하�
 <p>My cat is <strong>very</strong> grumpy.</p>
 ```
 
+### 블록(Block) 요소 vs 인라인(Inline) 요소
+HTML에는 두 가지 종류의 요소가 있습니다. 바로 블록 레벨 요소와 인라인 요소입니다.
+
+- 블록 레벨 요소는 한 줄(line)을 전부 차지하는 블록을 만들며 일반적으로 웹페이지의 구조적 요소를 나타낼 때 사용됩니다. 단락(paragraphs), 목록(lists), 네비게이션 메뉴(navigation menus), 꼬리말(footer) 등을 표현할 수 있습니다. 서로 다른 블록 요소끼리는 중첩될 수 있지만, 인라인 요소에는 중첩될 수 없습니다.
+
+- 인라인 요소는 새로운 줄을 만들지 않으며 항상 블록 레벨 요소에 포함되어 있습니다. 문장, 단어 같은 작은 부분에 대해 사용됩니다(ex. 하이퍼링크, 텍스트).
+
 ### 빈(Empty) 요소
 어떤 요소들은 내용을 갖지 않습니다.
 
@@ -42,12 +49,12 @@ HTML(Hypertext Markup Language)은 웹 페이지와 그 내용을 구조화하�
 <meta />
 ```
 
-종료 태그가 따로 존재하지 않고 시작 태그만으로 작성합니다.
+닫힌 태그가 따로 존재하지 않고 단일(single) 태그만으로 작성합니다.
 
-다만, 시작 태그의 뒷쪽에 슬래시(/)를 붙여 종료임을 표시합니다. 대부분의 경우 슬래시를 작성하지 않아도 문제 없이 동작하지만(브라우저가 HTML을 해석할 때 자동으로 슬래시를 붙여 동작), 브라우저의 해석이 언제나 올바른 것만은 아닙니다. 따라서 예기치 않은 오류를 피하기 위해 슬래시를 명시적으로 작성하는 것을 권장합니다.
+다만, 태그의 뒷쪽에 슬래시(/)를 붙여 닫힘을 표시합니다. 대부분의 경우 슬래시를 작성하지 않아도 문제 없이 동작하지만(브라우저가 HTML을 해석할 때 자동으로 슬래시를 붙여 동작), 브라우저의 해석이 언제나 올바른 것만은 아닙니다. 따라서 예기치 않은 오류를 피하기 위해 슬래시를 명시적으로 작성하는 것을 권장합니다.
 
 ### HTML5 기본 템플릿
-에밋(Emmet)으로 작성되는 HTML5의 기본 템플릿은 다음과 같습니다.
+에밋(emmet)으로 작성되는 HTML5의 기본 템플릿은 다음과 같습니다.
 
 ```html
 <!DOCTYPE html>
