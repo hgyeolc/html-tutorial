@@ -4,6 +4,8 @@
 HTML에 대해 학습 및 실습한 내용을 적습니다. MDN 사이트의 HTML 튜토리얼을 참고했습니다.
 - https://developer.mozilla.org/ko/
 
+<br />
+
 ## HTML ?
 HTML(Hypertext Markup Language)은 웹 페이지가 어떻게 구조화되어 있는지 브라우저에게 알려주기 위해 사용하는 마크업 언어입니다. 특정 컨텐츠를 생성 또는 수정하거나 또다른 페이지를 하이퍼링크로 연결하여 이동할 수 있습니다.
 
@@ -61,10 +63,7 @@ HTML에는 두 가지 종류의 요소가 있습니다. 바로 블록 레벨 요
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
-  <meta 
-    name="viewport"
-    content="width=device-width"
-  />
+  <meta name="viewport" content="width=device-width" />
   <title>Document</title>
 </head>
 <body>
@@ -86,3 +85,99 @@ HTML에는 두 가지 종류의 요소가 있습니다. 바로 블록 레벨 요
 - `<title></title>` : 브라우저의 탭에 나타나는 페이지 제목을 설정합니다.
 
 - `<body></body>` : 사용자에게 보여지길 원하는 모든 컨텐츠를 포함합니다.
+
+<br />
+
+## 메타데이터(Metadata)
+### `<head>` 요소
+head 태그는 브라우저에 내용이 표시되지 않는 대신 페이지에 대한 메타데이터를 포함합니다.
+
+### `<title>` 요소
+head 태그에 포함되는 요소인 `<title>`은 body 태그의 최상위 부분에 들어가는 `<h1>`과 헷갈릴 수 있습니다.
+
+- `<h1>`은 일반적으로 페이지당 한 번씩 사용되는데, 페이지 내용물의 제목이나 뉴스의 헤드라인을 표시하기 위해 표시됩니다.
+
+- `<title>`은 문서의 컨텐츠가 아니라 HTML 문서 전체의 제목을 표현하기 위한 메타데이터입니다.
+
+### `<meta>` 요소
+HTML 문서에 메타데이터를 적용하는데에 사용합니다.
+
+1. 문서의 문자(character) 인코딩 지정
+- `<meta charset="utf-8" />`
+
+- 위의 설명처럼, 웹 페이지에서 어떤 문자라도 취급할 수 있다는 것을 의미합니다.
+
+- 크롬과 같은 어떤 브라우저는 자동으로 잘못된 인코딩을 고치기 때문에, 문자 깨짐 현상을 겪지 않을 수도 있습니다. 그래도 다른 브라우저에서 있을 잠재적인 문제를 피하기 위해 인코딩을 `utf-8`로 설정해야 합니다.
+
+2. 저자와 설명 추가
+```html
+<meta name="author" content="my-name" />
+<meta name="description" content="some-description" />
+```
+
+- 많은 `<meta>` 요소가 `name`과 `content` 속성을 가집니다. `name`은 정보의 형태, `content`는 실제 메타데이터의 컨텐츠입니다.
+
+- 저자를 지정하는 것은 컨텐츠 작성자에 대한 정보를 볼 수 있게 해줍니다. 일부 컨텐츠 관리 시스템에는 페이지 작성자 정보를 자동으로 추출해서 사용할 수 있는 기능이 있습니다.
+
+- 페이지 컨텐츠 관련 키워드를 포함시키는 것은 검색 엔진에서 이 페이지가 더 많이 표시될 가능성을 높여줍니다. 이러한 활동을 SEO(Search Engine Optimization)라고 합니다.
+
+- 참고: 이외에도 많은 `<meta>` 기능들이 있지만 현재에는 더이상 사용되지 않습니다. 대표적으로 다른 검색 용어에 대해 해당 페이지의 관련성을 부여하기 위해 검색 엔진에 키워드를 제공하던 `<meta name="keywords" content="fill, in, your, keywords, here" />` 구문이 있습니다. 그러나 스팸 발송자들이 키워드 목록에 수백 개의 키워드를 채워버리는 악용 사례가 생겨버렸기 때문에 해당 기능은 검색 엔진들이 아예 무시를 해버리게 되었습니다.
+
+3. 다른 종류의 메타데이터 삽입
+```html
+<meta property="og:image" content="my-og-image.png" />
+<meta property="og:description" content="my-og-description" />
+<meta property="og:title" content="my-og-title" />
+<meta name="twitter:title" content="my-twitter-title" />
+```
+여러 메타데이터 중 어떤 것들은 특정 사이트(ex. SNS 사이트)에 사용할 수 있는 특정 정보를 제공하도록 설계되었습니다.
+
+- Open Graph Data는 Facebook이 웹 사이트에 더 풍부한 메타데이터를 제공하기 위해 발명한 프로토콜입니다. 이는 사용자에게 보다 나은 정보를 보여줄 수 있습니다.
+
+- Twitter에서도 유사한 형태의 독점 메타데이터를 가지고 있습니다.
+
+### 커스텀 아이콘
+커스텀 아이콘을 메타데이터에 추가하고 특정 컨텐츠에서 보여지게 할 수 있습니다. 이를 파비콘(favicon, favorite icon)이라 하며 16x16 픽셀의 크기를 갖습니다. 페이지의 탭이나 북마크 패널에서 볼 수 있습니다.
+
+사이트에 파비콘을 추가하는 방법은 다음과 같습니다.
+
+1. `index.html` 파일이 있는 디렉토리에 `.ico` 포멧의 파일을 저장합니다. 대부분의 브라우저는 `.gif` 또는 `.png`와 같은 보다 일반적인 형식의 파비콘을 지원하지만 ICO 포멧을 사용하면 IE6까지 작동합니다.
+
+2. `<head>`에 다음 구문을 추가합니다.
+```html
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+```
+
+### HTML에 CSS, JS 적용하기
+웹 페이지에 디자인을 더할 CSS, 사용자와 상호작용 기능을 위한 JS 파일을 적용하는 방법은 다음과 같습니다.
+
+```html
+<link rel="stylesheet" href="my-css-file.css" />
+```
+
+- `<link>`는 항상 문서의 `<head>` 부분에 위치합니다.
+- `rel="stylesheet"`는 스타일 시트임을 나타냄과 동시에 해당 파일의 경로를 뜻하는 `href`를 포함합니다.
+
+```html
+<script src="my-js-file.js"></script>
+```
+
+- `<script>`는 반드시 `<head>`에 들어갈 필요는 없습니다. 주로 `</body>`의 바로 앞, 문서 본문의 맨 끝에 넣는 것이 좋으며 JS를 적용하기 전에 모든 HTML 내용을 브라우저가 읽도록 하는 것이 좋습니다. 그렇지 않을 경우 JS에서 참조하려는 HTML 요소가 아직 존재하지 않는 것으로 판단하여 에러가 날 수 있습니다.
+
+### 문서의 기본 언어 설정
+`<html>`에 페이지의 기본 언어를 설정할 수 있습니다.
+
+```html
+<html lang="ko"></html>
+```
+
+HTML 문서는 언어가 설정되어 있으면 검색 엔진에 의해 보다 효과적으로 색인화(언어별 결과에 올바르게 표시)되며 화면 판독기를 사용하는 시각장애가 있는 사용자에게 유용합니다.
+
+또한 문서의 하위 섹션을 다른 언어로 인식하도록 설정할 수도 있습니다. 다음 구문은 일본어로 인식됩니다.
+
+```html
+<p>
+  Japanese example:
+  <span lang="jp">ご飯が熱い</span>
+</p>
+```
