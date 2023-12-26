@@ -554,3 +554,26 @@ HTML이 아닌 다운로드(ex. PDF)나 스트리밍 되는 리소스에 대한 
   <samp>index.html  README.md</samp>
 </pre>
 
+### 시간과 날짜
+
+현실에서 시간과 날짜를 표현하는 방법은 여러가지가 있습니다.
+
+- 26 December 2023
+
+- 26th December 2023
+
+- December 26 2023
+
+- 12/26/2023
+
+그러나 컴퓨터가 위와 같은 형식을 모두 인식하는 것은 쉽지 않습니다. 이를 위해 시간과 날짜를 기계가 읽을 수 있는 형식(machine-readable)으로 제공하는 `<time>`이 있습니다.
+
+```html
+<time datetime="2023-12-26">2023년 12월 26일</time>
+<time datetime="2023-12">2023년 12월</time>
+<time datetime="12-26">12월 26일</time>
+<time datetime="09:30">09:30</time>
+<time datetime="2023-12-26T09:30">2023년 12월 26일 09:30am</time>
+```
+
+<br />
