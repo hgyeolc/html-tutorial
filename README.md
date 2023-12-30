@@ -667,3 +667,29 @@ HTML이 아닌 다운로드(ex. PDF)나 스트리밍 되는 리소스에 대한 
 5. 대략적인 사이트맵을 스케치합니다. 사이트의 각 페이지를 원을 그려 묶고 페이지간 흐름(workflow)을 표시합니다.
 ![흐름스케치](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Document_and_website_structure/site-map.png)
 
+## HTML 디버깅(Debugging)
+
+HTML은 브라우저가 파싱(parsing, 구문 분석)하고 결과를 표시하기 전에 다른 형식으로 컴파일(compile)되지 않습니다. 단지 해석(interpret)될 뿐입니다.
+
+브라우저가 HTML을 파싱하는 방식은 프로그래밍 언어(JS, Rust 등)보다 훨씬 관대(permissive)하며, 장단점이 모두 존재합니다.
+
+일반적으로 코드에서 무언가 잘못된 작업을 수행할 때 마주하는 두 가지 오류 유형이 있습니다.
+
+- 구문(syntax) 오류 : 프로그램이 실행되지 않게 만드는 코드의 철자 또는 구두점 오류입니다.
+
+- 논리(logic) 오류 : 구문은 정확하지만 프로그램이 의도한 것과 다르게 실행되는 오류입니다.
+
+HTML 자체는 브라우저가 허용적(permissive)으로 파싱하기 때문에 구문 오류가 있어도 페이지가 계속 표시됩니다. 웹이 처음 만들어졌을 때 구문이 완전히 올바른지 확인하는 것보다 사람들이 자신의 컨텐츠를 게시하도록 하는 것이 더 중요하게 여겨졌기 때문입니다.
+
+다음은 오류 메시지 예시와 그 의미입니다.
+
+- "End tag `li` implied, but there were open elements" : 닫는 태그가 없음을 의미합니다. 줄(line)/열(column) 정보는 닫는 태그가 있어야 하는 줄 바로 뒤를 가리킵니다.
+
+- "Unclosed element `strong`" : 닫는 태그가 없음을 의미합니다. 줄/열 정보가 해당 위치를 바로 가리킵니다.
+
+- "End tag `strong` violates nesting rules" : 요소가 잘못 중첩됨을 의미합니다. 줄/열 정보가 해당 위치를 바로 가리킵니다.
+
+- "End of file reached when inside an attribute value. Ignoring tag" : 파일 끝 근처 어딘가에 제대로 구성되지 않은 속성 값이 있다는 것을 의미합니다.
+
+- "End of file seen and there were open elements" : 열린 요소가 있다는 사실을 의미합니다. 줄 번호는 파일의 마지막 몇 줄을 가리키며, 열린 요소의 코드 예시와 함께 나타납니다.
+
