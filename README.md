@@ -641,3 +641,29 @@ HTML이 아닌 다운로드(ex. PDF)나 스트리밍 되는 리소스에 대한 
 `<div>` 역시 블록 레벨 요소라는 것만 제외하면 `<span>`의 설명과 동일합니다.
 
 `<span>`과 `<div>`는 편리하기 때문에 남발하기 쉽습니다. 하지만 이들은 의미적 가치가 없기 때문에 코드를 복잡하게 만듭니다. 앞서 강조했듯이 적절한 의미적 요소를 찾을 수 없는 경우에만 최소한으로 사용해야 합니다.
+
+가끔 줄 바꿈이나 수평선이 필요할 때도 있습니다.
+
+- `<br>` : HTML은 대부분의 공백을 무시하고 렌더링하지만 `<br>`을 사용하면 강제 줄 바꿈이 가능합니다.
+
+- `<hr>` : 텍스트의 주제 변경과 같은 상황에서 문서에 수평선을 만듭니다.
+
+### 간단한 웹사이트 기획
+
+여기까지 웹 페이지 구조를 계획하는 방법에 대해 알아보았습니다. 다음 단계는 보다 나은 사용자 경험을 위해 어떤 컨텐츠를 넣을지, 어떤 페이지가 필요한지, 페이지를 어떻게 배열하고 연결해야 하는지 고민하는 것입니다. 이를 정보 구조(information architecture)라고 합니다.
+
+1. 모든 페이지에 공통적으로 적용하고 싶은 내용을 기록합니다. 예를 들어 네비게이션 메뉴, 꼬리말 등이 있습니다.
+![공통구조](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Document_and_website_structure/common-features.png)
+
+2. 각 페이지의 구조가 어떻게 보여질(렌더링 될) 것인지 대략적으로 스케치합니다.
+![구조스케치](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Document_and_website_structure/site-structure.png)
+
+3. 웹 사이트에 넣을 모든 공통 또는 개별 컨텐츠를 목록으로 작성합니다.
+![전체컨텐츠목록](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Document_and_website_structure/feature-list.png)
+
+4. 같은 페이지에 있을 컨텐츠, 다른 페이지에 있을 컨텐츠를 그룹 정렬시킵니다.
+![컨텐츠그룹화](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Document_and_website_structure/card-sorting.png)
+
+5. 대략적인 사이트맵을 스케치합니다. 사이트의 각 페이지를 원을 그려 묶고 페이지간 흐름(workflow)을 표시합니다.
+![흐름스케치](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Document_and_website_structure/site-map.png)
+
